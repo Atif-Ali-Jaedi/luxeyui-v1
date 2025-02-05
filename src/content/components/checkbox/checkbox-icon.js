@@ -1,0 +1,1 @@
+export const checkboxIcon = `<svg viewBox="0 0 17 18"><polyline style="transition: stroke-dashoffset 250ms linear 0.2s" fill="none" points="1 9 7 14 15 4" stroke="currentColor" stroke-dasharray="22" stroke-dashoffset="66" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline></svg>`;

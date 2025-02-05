@@ -1,0 +1,88 @@
+import { drawerContent } from "@/content/components/drawer";
+
+Displays a panel that slides in from the edge of the screen, containing supplementary content.
+
+## Usage
+
+<CodeDemo code={drawerContent.usage} initialHeight={680} isAdvanced />
+
+### Sizes
+
+<CodeDemo code={drawerContent.sizes} initialHeight={680} isAdvanced />
+
+### Non-dismissible
+
+By default, the drawer can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key.
+You can disable this behavior by setting the following properties:
+
+-   Set the `data-dismissable` attribute to `false` to prevent the drawer from closing when clicking on the overlay.
+-   Set the `data-keyboard-dismiss-disabled` attribute to `true` to prevent the drawer from closing when pressing the <Kbd>Esc</Kbd> key.
+
+<CodeDemo code={drawerContent.nonDismissible} initialHeight={680} isAdvanced />
+
+### Drawer Placement
+
+The drawer can be placed on any edge of the screen using the `placement` prop:
+
+-   `left` (default)
+-   `right`
+-   `top`
+-   `bottom`
+
+<CodeDemo code={drawerContent.drawerPlacement} initialHeight={680} isAdvanced />
+
+### Backdrop
+
+The backdrop can be either `transparent`, `opaque` or `blur`. The default value is `opaque`.
+
+<CodeDemo code={drawerContent.backdrop} initialHeight={680} isAdvanced />
+
+## Slots
+
+-   **drawer-container**: The main slot of the drawer content.
+-   **drawer-wrapper**: The wrapper slot of the drawer. It wraps the `base` and the `backdrop` slots.
+-   **backdrop**: The backdrop slot, it is displayed behind the drawer.
+-   **drawer-header**: The header of the drawer, it is displayed at the top of the drawer.
+-   **drawer-body**: The body of the drawer, it is displayed in the middle of the drawer.
+-   **drawer-footer**: The footer of the drawer, it is displayed at the bottom of the drawer.
+-   **close-button**: The close button of the drawer.
+
+### Custom Styles
+
+You can customize the `Drawer` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo
+	code={drawerContent.customStyles}
+	initialHeight={680}
+	isAdvanced
+	showExpandCollapseBtn
+/>
+
+## Data Attributes
+
+`Drawer` has the following attributes on the `base` element:
+
+-   **data-should-block-scroll**: Whether the drawer should block the scroll of the page on open.
+-   **data-dismissable**: When the drawer is dismissable.
+-   **data-keyboard-dismiss-disabled**: Whether pressing the <Kbd>Esc</Kbd> key to close the drawer should be disabled.
+
+`Drawer` has the following attributes on the elements that will close the drawer:
+
+-   **data-close-drawer**: Closes the drawer on click.
+
+`Drawer` has the following attributes on the `drawer-wrapper` element:
+
+-   **data-open**: When the drawer is open.
+
+## Drawer Properties
+
+| Property                       | Type                                                                               | Description                                                                                     | Default  |
+| ------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------- |
+| size                           | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `2xl` \| `3xl` \| `4xl` \| `5xl` \| `full` | The drawer size.                                                                                | `md`     |
+| radius                         | `none` \| `sm` \| `md` \| `lg` \| `full`                                           | The drawer border radius.                                                                       | `lg`     |
+| shadow                         | `sm` \| `md` \| `lg`                                                               | The drawer shadow.                                                                              | `sm`     |
+| backdrop                       | `opaque` \| `blur` \| `transparent`                                                | The drawer backdrop type.                                                                       | `opaque` |
+| placement                      | `top` \| `left` \| `bottom` \| `right` \|                                          | The drawer position.                                                                            | `right`  |
+| data-should-block-scroll       | `"true"` \| `"false"`                                                              | Whether the drawer should block the scroll of the page on open.                                 | `true`   |
+| data-dismissable               | `"true"` \| `"false"`                                                              | Whether the drawer can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key. | `true`   |
+| data-keyboard-dismiss-disabled | `"true"` \| `"false"`                                                              | Whether pressing the <Kbd>Esc</Kbd> key to close the drawer should be disabled.                 | `false`  |

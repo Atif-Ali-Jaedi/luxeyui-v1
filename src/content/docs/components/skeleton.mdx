@@ -1,0 +1,36 @@
+import { skeletonContent } from "@/content/components/skeleton";
+
+Skeleton is a placeholder to show a loading state and the expected shape of a component.
+
+## Usage
+
+<CodeDemo code={skeletonContent.usage} />
+
+### Loaded State
+
+You can use the `data-loaded` attribute and set it to `true` to stop the skeleton animation and show the children component.
+
+<CodeDemo code={skeletonContent.loadedState} />
+
+## Slots
+
+-   **base**: The base slot of the skeleton which contains the `::before` and `::after` pseudo elements to create the animation.
+-   **content**: The wrapped component to show the skeleton shape. It is visible only when the `data-loaded` attribute is set to `true`.
+
+<Spacer />
+
+## Data Attributes
+
+`Skeleton` has the following attributes on the `base` element:
+
+-   **data-loaded**: Indicates the loaded state of the skeleton.
+-   **data-disable-animation**: Whether to disable the animation.
+
+<Spacer />
+
+### Skeleton Props
+
+| Property               | Type                  | Description                        | Default |
+| ---------------------- | --------------------- | ---------------------------------- | ------- |
+| data-loaded            | `"true"` \| `"false"` | Whether the skeleton is loaded.    | `false` |
+| data-disable-animation | `"true"` \| `"false"` | Whether to disable the animations. | `false` |

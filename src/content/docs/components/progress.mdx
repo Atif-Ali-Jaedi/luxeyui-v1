@@ -1,0 +1,80 @@
+import { progressContent } from "@/content/components/progress";
+
+The Progress component allows you to view the progress of any activity.
+
+## Usage
+
+<CodeDemo code={progressContent.usage} />
+
+### Sizes
+
+<CodeDemo code={progressContent.sizes} />
+
+### Colors
+
+<CodeDemo code={progressContent.colors} />
+
+### Indeterminate
+
+You can use the `data-indeterminate` attribute to make it an indeterminate progress bar which is useful when you don't know how long an operation will take or when displaying a loading animation.
+
+<CodeDemo code={progressContent.indeterminate} />
+
+### Striped
+
+You can make a progress bar appear with a striped pattern using the data-striped attribute as following:
+
+<CodeDemo code={progressContent.striped.basic} />
+
+Or you can make a transparent striped progress bar:
+
+<CodeDemo code={progressContent.striped.transparent} />
+
+### With Label
+
+<CodeDemo code={progressContent.withLabel} />
+
+### With Value
+
+<CodeDemo code={progressContent.withValue} />
+
+## Slots
+
+-   **progress-base**: The base slot of the progress, which is the main container.
+-   **label-wrapper**: The label and value label wrapper.
+-   **label**: The label of the progress.
+-   **value**: The value label of the progress.
+-   **track**: The track is the background bar of the progress.
+-   **indicator**: The indicator is the bar that is filled according to the value.
+
+### Custom Styles
+
+You can customize the `Progress` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={progressContent.customStyles} />
+
+## Data Attributes
+
+`Progress` has the following attributes on the `base` element:
+
+-   **data-indeterminate**: Indicates whether the progress is indeterminate.
+-   **data-disabled**: Indicates whether the progress is disabled.
+-   **data-striped**: Indicates whether the progress is striped.
+-   **data-value**: The current value (controlled).
+
+## Accessibility
+
+-   Labeling support for accessibility.
+-   Internationalized number formatting as a percentage or value.
+-   Determinate and indeterminate progress support.
+
+## Progress Properties
+
+| Property           | Type                                                                                        | Description                            | Default      |
+| ------------------ | ------------------------------------------------------------------------------------------- | -------------------------------------- | ------------ |
+| size               | `sm` \| `md` \| `lg`                                                                        | The size of the code.                  | `md`         |
+| color              | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the code.                 | `foreground` |
+| data-value         | `string (numeric)`                                                                          | The current value (controlled).        | -            |
+| data-disabled      | `"true"` \| `"false"`                                                                       | Whether the progress is disabled.      | `false`      |
+| data-indeterminate | `"true"` \| `"false"`                                                                       | Whether the progress is indeterminate. | `false`      |
+| data-striped       | `"true"` \| `"false"`                                                                       | Whether the progress is striped.       | `false`      |

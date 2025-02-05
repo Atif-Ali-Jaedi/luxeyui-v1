@@ -1,0 +1,81 @@
+import { checkboxContent } from "@/content/components/checkbox";
+
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+## Usage
+
+<CodeDemo code={checkboxContent.usage} />
+
+### Disabled
+
+<CodeDemo code={checkboxContent.disabled} />
+
+### Sizes
+
+<CodeDemo code={checkboxContent.sizes} />
+
+### Colors
+
+<CodeDemo code={checkboxContent.colors} />
+
+### Radius
+
+<CodeDemo code={checkboxContent.radius} />
+
+### Indeterminate
+
+You can modify some settings to make the checkbox Indeterminate, overriding its appearance and maintaining it until set to `false`, regardless of user interaction.
+
+<CodeDemo code={checkboxContent.indeterminate} />
+
+### Line Through
+
+<CodeDemo code={checkboxContent.lineThrough} />
+
+### Custom Check Icon
+
+<CodeDemo code={checkboxContent.customCheckIcon} />
+
+## Slots
+
+-   **checkbox**: Checkbox wrapper, it handles alignment, placement, and general appearance.
+-   **icon-wrapper**: The icon wrapper which wraps the icon.
+-   **icon**: Icon within the checkbox, controlling size, visibility, and changes when checked required when using custom icon.
+-   **label**: The text associated with the checkbox.
+
+### Custom Styles
+
+You can customize the `Checkbox` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={checkboxContent.customStyles} showExpandCollapseBtn />
+
+## Data Attributes
+
+`Checkbox` has the following attributes on the `base` element:
+
+-   **data-invalid**: When the checkbox is invalid.
+-   **data-disabled**: When the checkbox is disabled.
+-   **data-required**: Whether user checkbox is required on the checkbox before form submission.
+-   **data-line-through**: Whether the label should be crossed out.
+-   **data-disable-animation**: Whether to disable the animation.
+
+## Accessibility
+
+-   Built with a native HTML `<input>` element.
+-   Full support for browser features like form autofill.
+-   Keyboard focus management and cross browser normalization.
+-   Keyboard event support for <Kbd>Tab</Kbd> and <Kbd>Space</Kbd> keys.
+-   Labeling support for assistive technology.
+-   Indeterminate state support.
+
+## Checkbox Properties
+
+| Property               | Type                                                                                        | Description                                                               | Default   |
+| ---------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------- |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the checkbox.                                                 | `sm`      |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the checkbox.                                                | `default` |
+| radius                 | `none` \| `sm` \| `md` \| `lg` \| `full`                                                    | The radius of the checkbox.                                               | `md`      |
+| data-required          | `"true"` \| `"false"`                                                                       | Whether user checkbox is required on the checkbox before form submission. | `false`   |
+| data-line-through      | `"true"` \| `"false"`                                                                       | Whether the label should be crossed out.                                  | `false`   |
+| data-disabled          | `"true"` \| `"false"`                                                                       | Whether the checkbox is disabled.                                         | `false`   |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | Whether the animation should be disabled.                                 | `false`   |

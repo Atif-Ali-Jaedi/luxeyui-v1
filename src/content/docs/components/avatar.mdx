@@ -1,0 +1,131 @@
+import { avatarContent } from "@/content/components/avatar";
+
+The Avatar Component is used to represent a user's profile picture, initial or fallback icon.
+
+## Usage
+
+<CodeDemo code={avatarContent.usage} />
+
+### Sizes
+
+<CodeDemo code={avatarContent.sizes} />
+
+### Disabled
+
+<CodeDemo code={avatarContent.disabled} />
+
+### Bordered
+
+<CodeDemo code={avatarContent.bordered} />
+
+### Radius
+
+<CodeDemo code={avatarContent.radius} />
+
+### Colors
+
+<CodeDemo code={avatarContent.colors} />
+
+### Avatar Fallbacks
+
+If the `src` is not passed or it's empty there are 2 fallbacks.
+
+-   If there is the `alt` attribute, it will be used as the name of the avatar.
+-   If there is neither `src` nor `alt` attribute, a default icon will be used.
+
+If the `data-show-fallback="true"` is not passed, the fallbacks will not be displayed.
+
+<CodeDemo code={avatarContent.fallbacks.basic} />
+
+### Custom Fallback
+
+To customize the dault fallback icon, use the `<div class-"fallback"></div>` and your icon inside.
+
+<CodeDemo code={avatarContent.fallbacks.custom} />
+
+## Avatar Group
+
+<CodeDemo code={avatarContent.group} />
+
+> **Note**: If you set the tabindex attribute, it makes the avatar focusable for keyboard navigation and will add the focus ring when focused.
+
+### Group Disabled
+
+<CodeDemo code={avatarContent.groupDisabled} />
+
+### Group Max Count
+
+You can limit the number of avatars displayed by passing the `data-max` attribute and set the value as your desire.
+
+<CodeDemo code={avatarContent.groupMaxCount} />
+
+### Group Total Count
+
+You can display the total number of avatars by passing the `data-total` attribute and set the value as your desire.
+
+<CodeDemo code={avatarContent.groupTotalCount} />
+
+### Group Custom Count
+
+You can also customize the count displayed when the data-total attribute is passed using the `data-count` and the `data-count-class` attributes.
+
+<CodeDemo code={avatarContent.groupCustomCount} />
+
+### Group Grid
+
+By passing the `data-grid` attribute to the avatar-group element, the avatars will be displayed in a grid layout.
+
+<CodeDemo code={avatarContent.groupGrid} />
+
+## Slots
+
+-   **avatar**: Avatar wrapper which includes styles for focus ring, position, and general appearance.
+-   **img**: Image element within the avatar which includes styles for opacity transition and size.
+-   **fallback**: Fallback content when the image fails to load or is not provided which includes styles for centering the content (dynamic).
+-   **name**: Initials displayed when the image is not provided or fails to load which includes styles for font, text alignment, and inheritance (dynamic).
+-   **icon**: Default Icon element within the avatar which includes styles for centering the content, text inheritance, and size (dynamic).
+
+### Custom Avatar Styles
+
+You can customize any part of the avatar by using different tailwind classes like this:
+
+<CodeDemo code={avatarContent.customStyles} />
+
+## Data Attributes
+
+`Avatar` has the following attributes on the `base` element:
+
+-   **data-disabled**: Whether the avatar is disabled.
+-   **data-bordered**: Adds a border around the avatar.
+-   **data-show-fallback**: Shows the fallback icon or initials when the image fails to load.
+
+`AvatarGroup` has the following attributes on the `base` element:
+
+-   **data-disabled**: Whether the avatar group is disabled.
+-   **data-max**: The maximum number of visible avatars.
+-   **data-total**: Control the number of avatar not visible.
+-   **data-grid**: Whether the avatars should be displayed in a grid.
+-   **data-count**: The text inside the custom count.
+-   **data-count-class**: The classes for customizing the custom count.
+
+## Avatar Properties
+
+| Property           | Type                                                                                        | Description                                                       | Default   |
+| ------------------ | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | --------- |
+| size               | `sm` \| `md` \| `lg`                                                                        | The size of the code.                                             | `md`      |
+| color              | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the code.                                            | `default` |
+| radius             | `none` \| `sm` \| `md` \| `lg` \| `full`                                                    | The radius of the code.                                           | `full`    |
+| data-bordered      | `"true"` \| `"false"`                                                                       | Adds a border around the avatar.                                  | `false`   |
+| data-disabled      | `"true"` \| `"false"`                                                                       | Disables the avatar and applies a disabled styling.               | `false`   |
+| data-show-fallback | `"true"` \| `"false"`                                                                       | Shows the fallback icon or initials when the image fails to load. | `false`   |
+
+## Avatar Group Properties
+
+| Property         | Type                  | Description                                               | Default |
+| ---------------- | --------------------- | --------------------------------------------------------- | ------- |
+| data-max         | `string (numeric)`    | The maximum number of visible avatars.                    | `5`     |
+| data-total       | `string (numeric)`    | Control the number of avatar not visible.                 | -       |
+| data-count       | `string`              | The text inside the custom count.                         | -       |
+| data-count-class | `string`              | The classes for customizing the custom count.             | -       |
+| data-grid        | `"true"` \| `"false"` | Whether the avatars should be displayed in a grid.        | `false` |
+| data-disabled    | `"true"` \| `"false"` | Disables the avatar group and applies a disabled styling. | `false` |

@@ -1,0 +1,54 @@
+import { scrollShadowContent } from "@/content/components/scroll-shadow";
+
+Applies top or bottom or both shadows when content overflows on scroll.
+
+## Usage
+
+<CodeDemo code={scrollShadowContent.usage} />
+
+### Hide Scrollbar
+
+You can use the `data-hide-scrollbar` attribute to hide vertical and horizontal scrollbars.
+
+<CodeDemo code={scrollShadowContent.hideScrollBar} />
+
+### Custom Shadow Size
+
+By default, the shadow size is `40` in pixels, but you can change it using the `--scroll-shadow-size` variable.
+
+<CodeDemo code={scrollShadowContent.customShadowSize} />
+
+### Horizontal
+
+In case you need to apply the shadow on the horizontal scroll, you can set the `data-orientation` attribute to `horizontal`.
+
+<CodeDemo code={scrollShadowContent.horizontal} />
+
+### Shadow Offset
+
+By default the shadow offset is `0` in pixels, but you can change it using the `data-offset` attribute. This allows you to apply the shadow on a specific position.
+
+<CodeDemo code={scrollShadowContent.offset} />
+
+<Spacer />
+
+## Data Attributes
+
+`ScrollShadow` has the following attributes on the `base` element:
+
+-   **data-orientation**: The scroll orientation. (default: `vertical`)
+-   **data-offset**: The scroll offset to show the shadow in pixels. (default: `0`)
+-   **data-hide-scrollbar**: Whether to hide the scrollbar or not. (default: `false`)
+-   **data-disabled**: Whether the shadow is enabled or not. (default: `false`)
+
+Below are attributes to control the shadow visibility:
+
+-   **data-top-scroll**: Applies the shadow on the top.
+-   **data-bottom-scroll**: Applies the shadow on the bottom.
+-   **data-top-bottom-scroll**: Applies the shadow on the both sides.
+
+Now when using `data-orientation-"horizontal"`:
+
+-   **data-left-scroll**: Applies the shadow on the left.
+-   **data-right-scroll**: Applies the shadow on the right.
+-   **data-left-right-scroll**: Applies the shadow on the both sides.

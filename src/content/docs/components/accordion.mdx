@@ -1,0 +1,125 @@
+import { accordionContent } from "@/content/components/accordion";
+
+Accordion display a list of high-level options that can expand/collapse to reveal more information.
+
+## Usage
+
+<CodeDemo code={accordionContent.usage} />
+
+> **Note**: The accordion itself hasn't been made to work if it has nested accordion(s) yet.
+
+### With Subtitle
+
+<CodeDemo code={accordionContent.withSubtitle} />
+
+### Expand Single Items
+
+If you set the `data-selection-mode` to `single`, then the `Accordion` will allow single item to be expanded at once.
+
+<CodeDemo code={accordionContent.expandSingleItems} />
+
+### Compact
+
+If you pass the `data-compact` attribute, the `Accordion` will be displayed in a compact style.
+
+<CodeDemo code={accordionContent.compact} />
+
+### Variants
+
+Accordion has 4 variants: `light`, `shadow`, `bordered` and `splitted`.
+
+#### Light Variant
+
+<CodeDemo code={accordionContent.variants.light} />
+
+#### Shadow Variant
+
+<CodeDemo code={accordionContent.variants.shadow} />
+
+#### Bordered Variant
+
+<CodeDemo code={accordionContent.variants.bordered} />
+
+#### Splitted Variant
+
+<CodeDemo code={accordionContent.variants.splitted} />
+
+### Default expanded items
+
+If you set the `data-open` attribute of the `accordion-item` to `true`, those items will be expanded by default.
+
+<CodeDemo code={accordionContent.defaultExpandedItems} />
+
+### Disabled items
+
+If you pass the `data-disabled` attribute in any of the `accordion-item`, those items will be disabled.
+
+<CodeDemo code={accordionContent.disabledItems} />
+
+### Start Content
+
+If you want to display some content before the accordion items, wrap it inside the `start-content` element.
+
+<CodeDemo code={accordionContent.startContent} />
+
+### Custom Indicator
+
+<CodeDemo code={accordionContent.customIndicator} />
+
+## Slots
+
+-   **accordion**: The container of the `accordion-item`.
+-   **accordion-item**: The accordion item wrapper.
+-   **heading**: The accordion item heading. It contains the indicator and the title.
+-   **trigger**: The button that open/close the accordion item.
+-   **title-wrapper**: The wrapper of the title and subtitle.
+-   **title**: The accordion item title.
+-   **subtitle**: The accordion item subtitle.
+-   **start-content**: The content before the accordion item.
+-   **indicator**: The element that indicates the open/close state of the accordion item.
+-   **content**: The accordion item content.
+
+## Custom Styles
+
+You can customize the `Accordion` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={accordionContent.customStyles} showExpandCollapseBtn />
+
+## Data Attributes
+
+`Accordion` has the following attributes on the `base` element:
+
+-   **data-disabled**: Whether the Accordion items are disabled.
+-   **data-selection-mode**: The type of selection that is allowed in the collection.
+-   **data-hide-indicator**: Whether the Accordion items indicator is hidden.
+-   **data-compact**: Whether all Accordion items should be smaller.
+-   **data-disable-animation**: Whether the Accordion items open/close animation is disabled.
+-   **data-disable-indicator-animation**: Whether the Accordion items indicator animation is disabled.
+
+`AccordionItem` has the following attributes on the `base` element:
+
+-   **data-open**: Whether the accordion item is open.
+-   **data-disabled**: When the accordion item is disabled.
+-   **data-hide-indicator**: Whether the AccordionItem indicator is hidden.
+
+## Accordion Properties
+
+| Property                         | Type                                            | Description                                                            | Default    |
+| -------------------------------- | ----------------------------------------------- | ---------------------------------------------------------------------- | ---------- |
+| variant                          | `light` \| `shadow` \| `bordered` \| `splitted` | The accordion appearance style.                                        | `light`    |
+| data-selection-mode              | `single` \| `multiple`                          | The type of selection that is allowed in the collection.               | `multiple` |
+| data-compact                     | `"true"` \| `"false"`                           | Whether all Accordion items should be smaller.                         | `false`    |
+| data-disabled                    | `"true"` \| `"false"`                           | Whether the Accordion items are disabled.                              | `false`    |
+| data-show-divider                | `"true"` \| `"false"`                           | Whether to display a divider at the bottom of the each accordion item. | `true`     |
+| data-hide-indicator              | `"true"` \| `"false"`                           | Whether the Accordion items indicator is hidden.                       | `false`    |
+| data-disable-animation           | `"true"` \| `"false"`                           | Whether the Accordion items open/close animation is disabled.          | `false`    |
+| data-disable-indicator-animation | `"true"` \| `"false"`                           | Whether the Accordion items indicator animation is disabled.           | `false`    |
+
+## Accordion Item Properties
+
+| Property                         | Type                  | Description                                                | Default |
+| -------------------------------- | --------------------- | ---------------------------------------------------------- | ------- |
+| data-open                        | `"true"` \| `"false"` | Whether the accordion item is open.                        | `false` |
+| data-disabled                    | `"true"` \| `"false"` | The current disabled status.                               | `false` |
+| data-hide-indicator              | `"true"` \| `"false"` | Whether the AccordionItem indicator is hidden.             | `false` |
+| data-disable-indicator-animation | `"true"` \| `"false"` | Whether the AccordionItem indicator animation is disabled. | `false` |

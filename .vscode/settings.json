@@ -1,0 +1,17 @@
+{
+	"tailwindCSS.experimental.classRegex": [
+		["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+		["tv\\(([^)]*)\\)", "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"]
+	],
+	"emmet.includeLanguages": {
+		"javascript": "html",
+		"mdx": "html"
+	},
+	"css.customData": [".vscode/css_custom_data.json"],
+	"[javascript]": {
+		"editor.quickSuggestions": {
+			"strings": true
+		}
+	},
+	"editor.mouseWheelZoom": true
+}

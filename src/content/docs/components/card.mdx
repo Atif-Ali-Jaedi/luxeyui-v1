@@ -1,0 +1,70 @@
+import { cardContent } from "@/content/components/card";
+
+Card is a container for text, photos and actions in the context of a single subject.
+
+## Usage
+
+<CodeDemo code={cardContent.usage} />
+
+### With Divider
+
+<CodeDemo code={cardContent.withDivider} />
+
+> See the [Divider](/docs/components/divider) component for more details.
+
+### With Image
+
+<CodeDemo code={cardContent.withImage} />
+
+### Blurred Footer
+
+You can set the `data-footer-blurred` attribute to the card to blur the footer.
+
+<CodeDemo code={cardContent.blurredFooter} />
+
+### Composition
+
+You can use other LuxeyUI components inside the card to compose a more complex card.
+
+<CodeDemo code={cardContent.composition} />
+
+### Primary Action
+
+If you pass the `data-pressable` attribute to the card and set it to `true`, it will be function as a button.
+
+<CodeDemo code={cardContent.primaryAction} />
+
+## Slots
+
+-   **card**: The main container of the card, where the header, body, and footer are placed.
+-   **card-header**: The header of the card, usually used for the title.
+-   **card-body**: The body of the card, where the main content is placed.
+-   **card-footer**: The footer of the card, usually used for actions.
+
+## Data Attributes
+
+`Card` has the following attributes on the `base` element:
+
+-   **data-disabled**: Whether the card is disabled.
+-   **data-pressable**: Whether the card should allow to be pressed.
+-   **data-hoverable**: Whether the card should change the background on hover.
+-   **data-full-width**: Whether the card should take the full width of its parent.
+-   **data-blurred**: Whether the card background should be blurred.
+-   **data-blurred-footer**: Whether the card footer background should be blurred.
+-   **data-disable-animation**: Whether to disable the animation.
+-   **data-disable-ripple**: Whether to disable ripple effect. Only when `data-pressable` is `true`.
+
+## Card Properties
+
+| Property               | Type                                     | Description                                                            | Default  |
+| ---------------------- | ---------------------------------------- | ---------------------------------------------------------------------- | -------- |
+| shadow                 | `none` \| `small` \| `medium` \| `large` | The card shadow.                                                       | `medium` |
+| radius                 | `none` \| `sm` \| `md` \| `lg`           | The card border radius.                                                | `lg`     |
+| data-full-width        | `"true"` \| `"false"`                    | Whether the card should take the full width of its parent.             | `false`  |
+| data-hoverable         | `"true"` \| `"false"`                    | Whether the card should change the background on hover.                | `false`  |
+| data-pressable         | `"true"` \| `"false"`                    | Whether the card should allow to be pressed.                           | `false`  |
+| data-blurred           | `"true"` \| `"false"`                    | Whether the card background should be blurred.                         | `false`  |
+| data-blurred-footer    | `"true"` \| `"false"`                    | Whether the card footer background should be blurred.                  | `false`  |
+| data-disabled          | `"true"` \| `"false"`                    | Whether the card should be disabled. The press events will be ignored. | `false`  |
+| data-disable-animation | `"true"` \| `"false"`                    | Whether to disable the animation.                                      | `false`  |
+| data-disable-ripple    | `"true"` \| `"false"`                    | Whether to disable ripple effect.                                      | `false`  |

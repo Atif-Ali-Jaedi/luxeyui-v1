@@ -1,0 +1,93 @@
+import { modalContent } from "@/content/components/modal";
+
+Displays a dialog with a custom content that requires attention or provides additional information.
+
+## Usage
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.usage} />
+
+### Sizes
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.sizes} />
+
+### Non-dismissible
+
+By default, the modal can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key.
+You can disable this behavior by setting the following properties:
+
+-   Set the `data-dismissable` attribute to `false` to prevent the modal from closing when clicking on the overlay.
+-   Set the `data-keyboard-dismiss-disabled` attribute to `true` to prevent the modal from closing when pressing the <Kbd>Esc</Kbd> key.
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.nonDismissible} />
+
+### Modal placement
+
+By default the modal is centered on screens higher than `sm` and is at the `bottom` of the screen on mobile. This placement is called `auto`, but
+you can change it by using the `placement` prop.
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.modalPlacement} />
+
+> **Note**: The `top-center` and `bottom-center` positions mean that the modal is positioned at the top / bottom of the screen on mobile and at the center of the screen on desktop.
+
+### Overflow scroll
+
+-   **inside**: The modal content will be scrollable.
+-   **outside**: The modal content will be scrollable and the modal will be fixed.
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.overflowScroll} />
+
+### Backdrop
+
+The backdrop can be either `transparent`, `opaque` or `blur`. The default value is `opaque`.
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.backdrop} />
+
+### Custom Backdrop
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.customBackdrop} />
+
+## Slots
+
+-   **modal-container**: The main slot of the modal content.
+-   **modal-wrapper**: The wrapper slot of the modal. It wraps the `base` and the `backdrop` slots.
+-   **backdrop**: The backdrop slot, it is displayed behind the modal.
+-   **modal-header**: The header of the modal, it is displayed at the top of the modal.
+-   **modal-body**: The body of the modal, it is displayed in the middle of the modal.
+-   **modal-footer**: The footer of the modal, it is displayed at the bottom of the modal.
+-   **close-button**: The close button of the modal.
+
+### Custom Styles
+
+You can customize the `Modal` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo isAdvanced initialHeight={680} code={modalContent.customStyles} />
+
+## Data Attributes
+
+`Modal` has the following attributes on the `base` element:
+
+-   **data-should-block-scroll**: Whether the modal should block the scroll of the page on open.
+-   **data-dismissable**: When the modal is dismissable.
+-   **data-keyboard-dismiss-disabled**: Whether pressing the <Kbd>Esc</Kbd> key to close the modal should be disabled.
+
+`Modal` has the following attributes on the elements that will close the modal:
+
+-   **data-close-modal**: Closes the modal on click.
+
+`Modal` has the following attributes on the `modal-wrapper` element:
+
+-   **data-open**: When the modal is open.
+
+## Modal Properties
+
+| Property                       | Type                                                                               | Description                                                                                    | Default  |
+| ------------------------------ | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------- |
+| size                           | `xs` \| `sm` \| `md` \| `lg` \| `xl` \| `2xl` \| `3xl` \| `4xl` \| `5xl` \| `full` | The modal size.                                                                                | `md`     |
+| radius                         | `none` \| `sm` \| `md` \| `lg` \| `full`                                           | The modal border radius.                                                                       | `lg`     |
+| shadow                         | `sm` \| `md` \| `lg`                                                               | The modal shadow.                                                                              | `sm`     |
+| backdrop                       | `opaque` \| `blur` \| `transparent`                                                | The modal backdrop type.                                                                       | `opaque` |
+| scroll-behavior                | `normal` \| `inside` \| `outside`                                                  | The modal scroll behavior.                                                                     | `normal` |
+| placement                      | `auto` \| `top` \| `center` \| `bottom` \| `top-center` \| `bottom-center`         | The modal position.                                                                            | `auto`   |
+| data-should-block-scroll       | `"true"` \| `"false"`                                                              | Whether the modal should block the scroll of the page on open.                                 | `true`   |
+| data-dismissable               | `"true"` \| `"false"`                                                              | Whether the modal can be closed by clicking on the overlay or pressing the <Kbd>Esc</Kbd> key. | `true`   |
+| data-keyboard-dismiss-disabled | `"true"` \| `"false"`                                                              | Whether pressing the <Kbd>Esc</Kbd> key to close the modal should be disabled.                 | `false`  |

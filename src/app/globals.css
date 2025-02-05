@@ -2,32 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+	font-family: "Fira Code";
+	src: url("../assets/fonts/FiraCode-Regular.woff2");
+	font-weight: 400;
+	font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@layer base {
+	:focus-visible {
+		@apply outline outline-2 outline-offset-2 outline-primary-500;
+	}
+	html {
+		@apply scroll-smooth;
+	}
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+	table {
+		@apply w-full border-collapse border-spacing-0;
+
+		& thead {
+			@apply [&>tr>th:first-child]:rounded-l-lg [&>tr>th:last-child]:rounded-r-lg [&>tr>th]:bg-zinc-400/20 [&>tr>th]:py-0 [&>tr>th]:pl-4 [&>tr>th]:text-left [&>tr>th]:align-middle [&>tr>th]:text-xs [&>tr>th]:text-zinc-600 dark:[&>tr>th]:bg-zinc-300/10 dark:[&>tr>th]:text-zinc-300 [&>tr]:h-12;
+		}
+		& td {
+			@apply max-w-[200px] overflow-auto whitespace-normal break-normal px-4 py-2 text-sm;
+			&::-webkit-scrollbar {
+				@apply h-2;
+			}
+			&::-webkit-scrollbar-thumb {
+				@apply rounded-full bg-zinc-400/50 dark:bg-zinc-500/50;
+			}
+		}
+	}
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dark .bg-grid-white\/\[0\.02\] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.02)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+.bg-grid-white\/\[0\.02\] {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(0 0 0 / 0.02)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: rippleAnimation 750ms linear;
+	pointer-events: none;
+}
+@keyframes rippleAnimation {
+	to {
+		opacity: 0;
+		transform: scale(5);
+	}
 }

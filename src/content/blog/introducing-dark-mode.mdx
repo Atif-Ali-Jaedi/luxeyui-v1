@@ -1,0 +1,70 @@
+import { Step, Steps } from "@/components";
+import dynamic from "next/dynamic";
+
+export const DarkModeDoc = dynamic(
+	() => import("@/content/docs/customization/dark-mode.mdx"),
+);
+
+After months of anticipation and user requests, I'm thrilled to announce the arrival of Dark Mode in our UI Library! This long-awaited feature is designed to enhance your development experience and make your applications more user-friendly, especially in low-light environments.
+
+### Why Dark Mode?
+
+Dark Mode isn't just a trendy feature; it offers several practical benefits:
+
+-   **Reduced Eye Strain**: Darker interfaces can be gentler on the eyes,
+    especially in dimly lit settings or during extended periods of screen time.
+-   **Improved Battery Life**: On OLED and AMOLED screens, dark themes can
+    save energy and extend battery life.
+-   **Enhanced Focus**: Dark interfaces can help reduce distractions, making
+    it easier to concentrate on your work.
+
+### What Took Me So Long?
+
+You might be wondering why it took me so long to roll out this feature. Here’s a peek behind the scenes:
+
+-   **Comprehensive Design Overhaul**: Implementing Dark Mode isn’t just
+    about changing a few colors. It required a thorough review of our entire
+    component library to ensure consistency and visual harmony.
+-   **User-Centric Approach**: I gathered extensive feedback from our
+    community to understand their needs and preferences for Dark Mode. This
+    feedback was crucial in guiding our design and development process.
+-   **Performance Optimization**: I wanted to ensure that Dark Mode runs
+    seamlessly without affecting the performance of your applications. This
+    involved rigorous testing and optimization.
+
+### Key Features of Our Dark Mode
+
+-   **Seamless Toggle**: Easily switch between Light and Dark Modes with a
+    single click or programmatically through our API.
+-   **Automatic Detection**: Our library can detect system-level dark mode
+    settings and adapt accordingly.
+-   **Customizable Themes**: While our default Dark Mode is sleek and
+    polished, you have full control to customize it to match your brand’s
+    aesthetics.
+-   **Consistent Across Components**: From buttons to modals, every component
+    has been carefully adapted to provide a cohesive look and feel in Dark Mode.
+
+### How to Get Started
+
+Enabling Dark Mode in your projects is straightforward:
+
+<DarkModeDoc />
+
+### What's Next?
+
+My commitment to enhancing your development experience doesn’t stop here. I'm already working on new features and improvements based on your feedback. Here’s what you can expect soon:
+
+-   **More Theme Options**: I plan to introduce more predefined themes and
+    customization options.
+-   **Performance Enhancements**: Continued focus on optimizing performance
+    across all components.
+-   **New Components**: Expanding my library with new components and
+    utilities to make your development faster and easier.
+
+---
+
+Thank you for being a part of our journey. I'm excited to see how you will leverage Dark Mode to create stunning and accessible user interfaces.
+
+**Happy Coding!** 🎉
+
+---

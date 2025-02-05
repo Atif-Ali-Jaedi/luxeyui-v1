@@ -1,0 +1,53 @@
+import { HighlightedSnippet, Step, Steps } from "@/components";
+
+## Astro
+
+<Steps>
+    <Step heading={"Create an Astro project"}>
+        Start by creating a new project using `Astro`.
+
+        ```bash
+        npm create astro@latest luxeyui-project
+        cd luxeyui-project
+        ```
+    </Step>
+    <Step heading={"install Tailwind CSS and LuxeyUI"}>
+        Run the `astro add` command to install both `tailwindcss` and `@astro/tailwind` as well as generate a `tailwind.config.cjs` file.
+
+        ```bash
+        npx astro add tailwind
+        ```
+
+        And then install LuxeyUI:
+
+        ```bash
+        npm i luxeyui@latest
+        ```
+    </Step>
+    <Step heading={"Import the files provided by LuxeyUI"}>
+        In your main layout file, `src/layouts/Layout.astro`, import the css file at the top of the file:
+
+        ```js
+        import "./node_modules/luxeyui/dist/index.css";
+        ```
+
+        Now you'll also need to import the `js` file before the end of the `body` tag with the `client:only` directive.
+
+        ```html
+        <script client:only>
+            import "./node_modules/luxeyui/dist/index.js";
+        </script>
+        ```
+    </Step>
+    <Step heading={"That is it"}>
+        Now you can start your designing using components with full functionality. Also you can use other libraries or frameworks like react with it. For instance:
+
+        ```jsx
+        export const Button = ({ className, children, ...props }) => {
+          return (
+            <button className={`button ${className}`} {...props}>{children}</button>
+          )
+        }
+        ```
+    </Step>
+</Steps>

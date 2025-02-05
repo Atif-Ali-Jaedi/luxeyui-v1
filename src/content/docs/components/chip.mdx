@@ -1,0 +1,68 @@
+import { chipContent } from "@/content/components/chip";
+
+A Chip is a small block of essential information.
+
+## Usage
+
+<CodeDemo code={chipContent.usage} />
+
+### Disabled
+
+<CodeDemo code={chipContent.disabled} />
+
+### Sizes
+
+<CodeDemo code={chipContent.sizes} />
+
+### Colors
+
+<CodeDemo code={chipContent.colors} />
+
+### Radius
+
+<CodeDemo code={chipContent.radius} />
+
+### Variants
+
+<CodeDemo code={chipContent.variants} />
+
+### Start & End Content
+
+<CodeDemo code={chipContent.startAndEndContent} />
+
+### With Close Button
+
+If you add an element with the `close-button` class, the close button will be visible. You can override the close icon by providing an icon inside the `close-icon` element.
+
+<CodeDemo code={chipContent.withCloseButton} />
+
+### With Avatar
+
+<CodeDemo code={chipContent.withAvatar} />
+
+### List of Chips
+
+<CodeDemo code={chipContent.listOfChips} />
+
+## Slots
+
+-   **chip**: The base slot of the chip, it is the container of the chip.
+-   **content**: The content slot of the chip, it is the container of the chip children.
+-   **dot**: Small dot on the left side of the chip.
+-   **close-button**: Close button classes of the chip.
+
+### Custom Styles
+
+You can customize the `Chip` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={chipContent.customStyles} />
+
+## Chip Properties
+
+| Property      | Type                                                                                        | Description                                       | Default   |
+| ------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------- | --------- |
+| size          | `sm` \| `md` \| `lg`                                                                        | The size of the chip.                             | `sm`      |
+| color         | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the chip.                            | `default` |
+| radius        | `none` \| `sm` \| `md` \| `lg` \| `full`                                                    | The radius of the chip.                           | `md`      |
+| variant       | `solid` \| `bordered` \| `light` \| `flat` \| `faded` \| `shadow` \| `dot`                  | The chip appearance style.                        | `solid`   |
+| data-disabled | `"true"` \| `"false"`                                                                       | Disables the chip and applies a disabled styling. | `false`   |

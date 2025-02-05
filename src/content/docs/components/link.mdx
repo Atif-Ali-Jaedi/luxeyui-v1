@@ -1,0 +1,50 @@
+import { linkContent } from "@/content/components/link";
+
+Link component is styled to resemble a hyperlink for navigating between pages.
+
+## Usage
+
+<CodeDemo code={linkContent.usage} />
+
+### Disabled
+
+<CodeDemo code={linkContent.disabled} />
+### Sizes
+
+<CodeDemo code={linkContent.sizes} />
+### Colors
+
+<CodeDemo code={linkContent.colors} />
+### Underline
+
+<CodeDemo code={linkContent.underline} />
+
+### External
+
+If you set the `target` attribute or `data-show-anchor-icon` attribute to `true`, it will show an anchor icon.
+
+<CodeDemo code={linkContent.external} />
+
+### Block Link
+
+If you set the `data-block` attribute, the link will be rendered as a block element with a hover effect.
+
+<CodeDemo code={linkContent.blockLink} />
+
+## Data Attributes
+
+-   **data-disabled**: When the link is disabled.
+-   **data-block**: When the link is rendered as a block element with a hover effect.
+-   **data-show-anchor-icon**: When the anchor icon is shown in external links.
+
+## Link Properties
+
+| Property              | Type                                                                                        | Description                                                                                                                                                | Default      |
+| --------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| size                  | `sm` \| `md` \| `lg`                                                                        | The size of the link.                                                                                                                                      | `md`         |
+| color                 | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the link.                                                                                                                                     | `foreground` |
+| underline             | `none` \| `hover` \| `always` \| `active` \| `focus`                                        | The underline of the link.                                                                                                                                 | `none`       |
+| target                | `HTMLAttributeAnchorTarget`                                                                 | The target window for the link. See <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target" color="primary" isExternal>MDN</Link>. | -            |
+| data-show-anchor-icon | `"true"` \| `"false"`                                                                       | Whether to show the anchor icon.                                                                                                                           | `false`      |
+| data-block            | `"true"` \| `"false"`                                                                       | Whether the link should be rendered as block with a hover effect.                                                                                          | `false`      |
+| data-disabled         | `"true"` \| `"false"`                                                                       | Whether the link is disabled.                                                                                                                              | `false`      |

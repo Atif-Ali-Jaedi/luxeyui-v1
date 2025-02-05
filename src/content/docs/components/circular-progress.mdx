@@ -1,0 +1,57 @@
+import { circularProgressContent } from "@/content/components/circular-progress";
+
+Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+
+## Usage
+
+<CodeDemo code={circularProgressContent.usage} />
+
+### Sizes
+
+<CodeDemo code={circularProgressContent.sizes} />
+
+### Colors
+
+<CodeDemo code={circularProgressContent.colors} />
+
+### With Label
+
+<CodeDemo code={circularProgressContent.withLabel} />
+
+### With Value
+
+<CodeDemo code={circularProgressContent.withValue} />
+
+## Slots
+
+-   **circular-progress**: The base slot of the circular progress, it is the main container.
+-   **svg-wrapper**: The wrapper of the svg circles and the value label.
+-   **progress**: The svg element of the circles.
+-   **track**: The track is the background circle of the circular progress.
+-   **indicator**: The indicator is the one that is filled according to the value.
+-   **value**: The value content.
+-   **progress-label**: The label content.
+
+### Custom Styles
+
+You can customize the `CircularProgress` component by cusing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={circularProgressContent.customStyles} />
+
+## Data Attributes
+
+`CircularProgress` has the following attributes on the `base` element:
+
+-   **data-disabled**: Indicates whether the progress is disabled.
+-   **data-value**: The current value (controlled).
+-   **data-disable-animation**: Whether to disable the animation.
+
+## Circular Progress Properties
+
+| Property               | Type                                                                                        | Description                       | Default      |
+| ---------------------- | ------------------------------------------------------------------------------------------- | --------------------------------- | ------------ |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the indicator.        | `md`         |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the indicator.       | `foreground` |
+| value                  | `string (number)`                                                                           | The current value (controlled).   | -            |
+| data-disabled          | `"true"` \| `"false"`                                                                       | Whether the progress is disabled. | `false`      |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | Whether to disable the animation. | `false`      |

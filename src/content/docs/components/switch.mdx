@@ -1,0 +1,57 @@
+import { switchContent } from "@/content/components/switch";
+
+The Switch component is used to toggle between checked and not checked states.
+
+## Usage
+
+<CodeDemo code={switchContent.usage} />
+
+### With Label
+
+<CodeDemo code={switchContent.withLabel} />
+
+### Disabled
+
+<CodeDemo code={switchContent.disabled} />
+
+### Sizes
+
+<CodeDemo code={switchContent.sizes} />
+
+### Colors
+
+<CodeDemo code={switchContent.colors} />
+
+### With Thumb Icon
+
+<CodeDemo code={switchContent.withThumbicon} />
+
+### With Icons
+
+<CodeDemo code={switchContent.withIcons} />
+
+## Slots
+
+-   **switch**: The base slot for the switch.
+-   **main-wrapper**: The wrapper of the start icon, end icon and thumb.
+-   **thumb**: The thumb element of the switch which is a circle.
+-   **switch-label**: The label of the switch.
+-   **start-content**: The icon at the start of the switch.
+-   **end-content**: The icon at the end of the switch.
+-   **thumb-icon**: The icon inside the thumb.
+
+## Data Attributes
+
+`Switch` has the following attributes on the `base` element:
+
+-   **data-disabled**: When the switch is disabled.
+-   **data-disable-animation**: Whether the animation should be disabled.
+
+## Switch Properties
+
+| Property               | Type                                                                                        | Description                               | Default      |
+| ---------------------- | ------------------------------------------------------------------------------------------- | ----------------------------------------- | ------------ |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the switch.                   | `md`         |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the switch.                  | `foreground` |
+| data-disabled          | `"true"` \| `"false"`                                                                       | Whether the switch is disabled.           | `false`      |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | Whether the animation should be disabled. | `false`      |

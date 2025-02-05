@@ -1,0 +1,92 @@
+import { buttonContent } from "@/content/components/button";
+
+Button allows users to perform actions and choose with a single tap or more.
+
+## Usage
+
+<CodeDemo code={buttonContent.usage} />
+
+### Disabled
+
+<CodeDemo code={buttonContent.disabled} />
+
+### Sizes
+
+<CodeDemo code={buttonContent.sizes} />
+
+### Radius
+
+<CodeDemo code={buttonContent.radius} />
+
+### Colors
+
+<CodeDemo code={buttonContent.colors} />
+
+### Variants
+
+<CodeDemo code={buttonContent.variants} />
+
+### Loading
+
+Using the [Spinner](/docs/components/spinner) component and using the `data-disabled` attribute, you can make it a loading button.
+
+<CodeDemo code={buttonContent.loading.basic} />
+
+Or you can use any custom spinner.
+
+<CodeDemo code={buttonContent.loading.custom} />
+
+### With Icons
+
+<CodeDemo code={buttonContent.withIcons} />
+
+### Icon Only
+
+<CodeDemo code={buttonContent.iconOnly} />
+
+### Custom Styles
+
+You can customize the `Button` component by passing custom Tailwind CSS classes to the component `slot`.
+
+<CodeDemo code={buttonContent.customStyles} />
+
+## Button Group
+
+<CodeDemo code={buttonContent.group} />
+
+### Group Disabled
+
+<CodeDemo code={buttonContent.groupDisabled} />
+
+## Data Attributes
+
+`Button` has the following attributes on the `base` element:
+
+-   **data-disabled**: Whether the button is disabled.
+-   **data-icon-only**: Whether the button should have the same width and height.
+-   **data-full-width**: Whether the button should take the full width of its parent.
+
+`ButtonGroup` has the following attribute on the `base` element:
+
+-   **data-full-width**: Whether the buttons should take the full width of its parent.
+
+## Accessibility
+
+-   Button has role of button.
+-   Keyboard event support for <Kbd>Space</Kbd> and <Kbd>Enter</Kbd> keys.
+-   Mouse and touch event handling, and press state management.
+-   Keyboard focus management and cross browser normalization.
+
+## Button Properties
+
+| Property               | Type                                                                                        | Description                                                | Default   |
+| ---------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | --------- |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the button.                                    | `md`      |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the button.                                   | `default` |
+| radius                 | `none` \| `sm` \| `md` \| `lg` \| `full`                                                    | The radius of the button.                                  | `md`      |
+| variant                | `solid` \| `bordered` \| `light` \| `flat` \| `faded` \| `shadow` \| `dot`                  | The button appearance style.                               | `solid`   |
+| data-full-width        | `"true"` \| `"false"`                                                                       | Whether the card should take the full width of its parent. | `false`   |
+| data-icon-only         | `"true"` \| `"false"`                                                                       | Whether the button should have the same width and height.  | `false`   |
+| data-disabled          | `"true"` \| `"false"`                                                                       | Whether the card should be disabled.                       | `false`   |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | Whether to disable the animation.                          | `false`   |
+| data-disable-ripple    | `"true"` \| `"false"`                                                                       | Whether to disable ripple effect.                          | `false`   |

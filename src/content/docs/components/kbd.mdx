@@ -1,0 +1,48 @@
+import { kbdContent } from "@/content/components/kbd";
+
+Keyboard key is a component to display which key or combination of keys performs a given action.
+
+## Usage
+
+<CodeDemo code={kbdContent.usage} />
+
+### Keys
+
+<CodeDemo code={kbdContent.keys} />
+
+## Slots
+
+-   **kbd**: Kbd wrapper, it handles alignment, placement, and general appearance.
+-   **abbr**: The `keys` wrapper that handles the appearance of the keys which is added dynamically.
+-   **content**: The children wrapper that handles the appearance of the content.
+
+## Accessibility
+
+-   Each command `key` has a `title` attribute that describes the action that the key performs.
+
+## Keyboard Keys
+
+List of supported keys.
+
+```ts
+type KbdKey =
+	| "command"
+	| "shift"
+	| "ctrl"
+	| "option"
+	| "enter"
+	| "delete"
+	| "escape"
+	| "tab"
+	| "capslock"
+	| "up"
+	| "right"
+	| "down"
+	| "left"
+	| "pageup"
+	| "pagedown"
+	| "home"
+	| "end"
+	| "help"
+	| "space";
+```

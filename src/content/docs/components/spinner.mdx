@@ -1,0 +1,39 @@
+import { spinnerContent } from "@/content/components/spinner";
+
+The Spinner component expresses an unspecified wait time or display the length of a process.
+
+## Usage
+
+<CodeDemo code={spinnerContent.usage} />
+
+### Sizes
+
+<CodeDemo code={spinnerContent.sizes} />
+
+### Colors
+
+<CodeDemo code={spinnerContent.colors} />
+
+### With Label
+
+<CodeDemo code={spinnerContent.withLabel} />
+
+### Label colors
+
+<CodeDemo code={spinnerContent.labelColors} />
+
+## Slots
+
+-   **spinner**: The base slot of the spinner which wraps the circles and the label.
+-   **circle-wrapper**:The wrapper of the circles.
+-   **circle1**: The first circle of the spinner.
+-   **circle2**: The second circle of the spinner.
+-   **spinner-label**: The label content of the spinner.
+
+## Spinner Properties
+
+| Property    | Type                                                                                                    | Description             | Default        |
+| ----------- | ------------------------------------------------------------------------------------------------------- | ----------------------- | -------------- |
+| size        | `sm` \| `md` \| `lg`                                                                                    | The size of the code.   | `md`           |
+| color       | `currentColor` \|`default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` \| `white` | The color of the code.  | `currentColor` |
+| label color | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger`                             | The color of the label. | `default`      |

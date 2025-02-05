@@ -1,0 +1,79 @@
+import { radioGroupContent } from "@/content/components/radio-group";
+
+Radio Group allow users to select a single option from a list of mutually exclusive options.
+
+## Usage
+
+<CodeDemo code={radioGroupContent.usage} />
+
+### Disabled
+
+<CodeDemo code={radioGroupContent.disabled} />
+
+### Default Value
+
+<CodeDemo code={radioGroupContent.defaultValue} />
+
+### With Description
+
+<CodeDemo code={radioGroupContent.withDescription} />
+
+### Horizontal
+
+<CodeDemo code={radioGroupContent.horizontal} />
+
+### Invalid
+
+<CodeDemo code={radioGroupContent.invalid} />
+
+## Slots
+
+-   RadioGroup Slots
+
+    -   **radio-group**: Radio group root wrapper, it wraps the label and the wrapper.
+    -   **raddio-wrapper**: Radio group wrapper, it wraps all Radios.
+    -   **label**: Radio group label, it is placed before the wrapper.
+    -   **description**: Description slot for the radio group.
+    -   **error-msg**: Error message slot for the radio group.
+
+-   Radio Slots
+    -   **radio**: Radio root wrapper, it wraps all elements.
+    -   **point-wrapper**: Radio wrapper, it wraps the control element.
+    -   **point**: Control element, it is the circle element.
+    -   **label-wrapper**: Label and description wrapper.
+    -   **label**: Label slot for the radio.
+    -   **description**: Description slot for the radio.
+
+### Custom Styles
+
+You can customize the `RadioGroup` and `Radio` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={radioGroupContent.cusTomstyles} showExpandCollapseBtn />
+
+## Accessibility
+
+-   Radio groups are exposed to assistive technology via ARIA.
+-   Each radio is built with a native HTML `<input>` element, which can be optionally visually hidden to allow custom styling.
+-   Full support for browser features like form autofill.
+-   Keyboard event support for arrows keys.
+-   Keyboard focus management and cross browser normalization.
+-   Group and radio labeling support for assistive technology.
+
+## Radio Group Properties
+
+| Property               | Type                       | Description                                                           | Default    |
+| ---------------------- | -------------------------- | --------------------------------------------------------------------- | ---------- |
+| data-orientation       | `vertical` \| `horizontal` | The axis the radio group items should align with.                     | `vertical` |
+| data-disabled          | `"true"` \| `"false"`      | Whether the radio group is disabled.                                  | `false`    |
+| data-disable-animation | `"true"` \| `"false"`      | Whether to disable the animation.                                     | `false`    |
+| data-invalid           | `"true"` \| `"false"`      | Whether the radios is invalid.                                        | `false`    |
+| data-required          | `"true"` \| `"false"`      | Whether user radios are required on the input before form submission. | `false`    |
+
+## Radio Properties
+
+| Property               | Type                                                                                        | Description                       | Default      |
+| ---------------------- | ------------------------------------------------------------------------------------------- | --------------------------------- | ------------ |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the radio.            | `md`         |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the radio.           | `foreground` |
+| data-disabled          | `"true"` \| `"false"`                                                                       | Whether the radi is disabled.     | `false`      |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | Whether to disable the animation. | `false`      |

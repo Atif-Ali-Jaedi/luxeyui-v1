@@ -1,0 +1,75 @@
+import { HighlightedSnippet } from "@/components/docs/HighlightedSnippet";
+
+LuxeyUI allows you to create new variants for components that better suit your project's needs. This can be done quite easily.
+
+All you have to do is to add new `selectors` and `properties` in your CSS file for that specific component.
+
+> **Note**: For better understanding the customization process please visit the [Override Styles](/docs/override-styles) documentation.
+
+## Creating variants for Components
+
+Let's customize the `Button` component and add a new variant to it.
+
+### Using Vanilla CSS
+
+Using Vanilla CSS, it is super simple. Take this for example:
+
+<CodeDemo
+	code={`<style>
+    button.button {
+        /* Colors */
+        &.violet {
+        background: #8b5cf6;
+        color: #fff;
+        }
+        /* Sizes */
+        &.size-xl {
+        padding: 0.75em 2em;
+        }
+    }
+</style>
+<button class="button violet">Button</button>
+<button class="button foreground radius-full size-xl">Button</button>
+`}
+/>
+
+This is just a basic example, you can do a lot more if you know good CSS.
+
+### Using TailwindCSS with PostCSS
+
+Using TailwindCSS, it is the exact same process. But sometimes you might need to use duplicate `selectors` in order to work properly. Below is an example about how to implement that:
+
+<HighlightedSnippet
+	showExpandCollapseBtn
+	lang="css"
+	code={`button.button {
+	/* Colors */
+	&.olive {
+		@apply bg-[#84cc16] text-[#000];
+	}
+	&.orange {
+		@apply bg-[#ff8c00] text-[#fff];
+	}
+	&.violet {
+		@apply bg-[#8b5cf6] text-[#fff];
+	}
+	/* Disabled */
+	&[data-disabled] {
+		@apply cursor-not-allowed bg-[#eaeaea] text-[#000] opacity-50;
+	}
+	/* Sizes */
+	&.size-xs {
+		@apply text-tiny rounded-small h-6 min-w-12 gap-1 px-2;
+	}
+	&.size-md {
+		@apply text-small h-10 min-w-20 gap-2 rounded-lg px-4;
+	}
+	&.size-xl {
+		@apply text-large h-14 min-w-28 gap-4 rounded-xl px-8;
+	}
+}`}
+/>
+
+Like these, you can add your custom variants within your css file using either Vanilla CSS or TailwindCSS.
+
+> **Note**: You can see the source code of every components in the <Link isExternal color="primary" href="https://github.com/Atif-Ali-Jaedi/luxeyui">github repository</Link> or you can see the class names of the components to customize as needed.

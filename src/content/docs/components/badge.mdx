@@ -1,0 +1,83 @@
+import { badgeContent } from "@/content/components/badge";
+
+Badges are used as a small numerical value or status descriptor for UI elements.
+
+## Usage
+
+<CodeDemo code={badgeContent.usage} />
+
+### Sizes
+
+<CodeDemo code={badgeContent.sizes} />
+
+### Colors
+
+<CodeDemo code={badgeContent.colors} />
+
+### Variants
+
+<CodeDemo code={badgeContent.variants} />
+
+### Placements
+
+<CodeDemo code={badgeContent.placements} />
+
+### Shapes
+
+For a better positioning, you can use either `rectangle` or `circle` to specify the shape of the badge or you can even adjust the position using the `--_percentage` css variable.
+
+<CodeDemo code={badgeContent.shapes} />
+
+### Badge Visibility
+
+You can control the visibility of the badge by using the `data-invisible` attribute.
+
+<CodeDemo code={badgeContent.visibility} />
+
+### Content Examples
+
+<CodeDemo code={badgeContent.contentExamples} />
+
+### Disable Outline
+
+By default, the badge has an outline, you can disable it by using the `data-show-outline="false"` attribute.
+
+<CodeDemo code={badgeContent.disableOutline} />
+
+## Slots
+
+The Badge component has two slots:
+
+-   **badge-container**: The base slot for the badge, which is the container of the badge.
+-   **badge**: The main slot for the badge content, which is the content of the badge.
+
+<Spacer />
+
+## Data Attributes
+
+`Badge` has the following attributes on the `base` element:
+
+-   **data-show-outline**: If `true`, the badge will have an outline.
+-   **data-disable-animation**: If `true`, the badge will not have an animation.
+-   **data-one-char**: If `true`, the badge will have the same width and height.
+
+`Badge` has the following attribute on the `badge` element:
+
+-   **data-invisible**: If `true`, the badge will be invisible.
+
+<Spacer />
+
+## Badge Properties
+
+| Property               | Type                                                                                        | Description                                               | Default     |
+| ---------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------- | ----------- |
+| variant                | `solid` \| `flat` \| `faded` \| `shadow`                                                    | The variant style of the badge.                           | `solid`     |
+| color                  | `foreground` \| `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The color of the badge.                                   | `default`   |
+| size                   | `sm` \| `md` \| `lg`                                                                        | The size of the badge.                                    | `md`        |
+| shape                  | `circle` \| `rectangle`                                                                     | The shape of the badge.                                   | `rectangle` |
+| placement              | `top-right` \| `top-left` \| `bottom-right` \| `bottom-left`                                | The placement of the badge.                               | `top-right` |
+| data-show-outline      | `"true"` \| `"false"`                                                                       | If `true`, the badge will have an outline.                | `true`      |
+| data-disable-animation | `"true"` \| `"false"`                                                                       | If `true`, the badge will not have an animation.          | `true`      |
+| data-invisible         | `"true"` \| `"false"`                                                                       | If `true`, the badge will be invisible.                   | `false`     |
+| data-one-char          | `"true"` \| `"false"`                                                                       | If `true`, the badge will have the same width and height. | `false`     |
+| `:empty`               | -                                                                                           | Displays a dot when there's no children inside the badge. | -           |

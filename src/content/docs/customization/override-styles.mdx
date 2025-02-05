@@ -1,0 +1,75 @@
+import { radioGroupContent } from "@/content/components/radio-group";
+
+Overriding default component styles is as simple as passing your own class names to the `class` attributes or to the css `selectors` for components. If you're not using PostCSS, write CSS the old fashion way.
+
+### What's a Slot?
+
+A slot is a part of a component that can be styled separately. But, it's a bit different than React Components or I would say in React UI libraries like <Link isExternal color="primary" href="https://nextui.org">NextUI</Link>.
+
+So, basically it's like nested `div`s which can be customized separately. It's much more useful than using just an attribute like `data-class-names` with the value `{base: 'bg-base-secondary'}`, because it will require JavaScript and will make the site slower.
+
+### Overriding a component
+
+Now, lets override the default styles of the [Button](/docs/components/button) using TailwindCSS.
+
+<CodeDemo
+	code={`<div class="grid place-items-center p-6">
+  <button class="button bg-gradient-to-r from-violet-500 to-blue-500 !text-white radius-full !px-8 !py-3 shadow-md shadow-violet-500/20 active:!scale-105 active:-translate-y-1">Press Me</button>
+</div>`}
+/>
+
+> **Note**: You have to sometime use the `!` sign before class names to make it `!important` in order to override the default styles.
+
+### Component with Slots
+
+Some LuxeyUI Components have Slots. Take the [Radio Group](/docs/components/radio-group) for example. It has the following slots:
+
+-   RadioGroup Slots
+
+    -   **radio-group**: Radio group root wrapper, it wraps the label and the wrapper.
+    -   **raddio-wrapper**: Radio group wrapper, it wraps all Radios.
+    -   **label**: Radio group label, it is placed before the wrapper.
+    -   **description**: Description slot for the radio group.
+    -   **error-msg**: Error message slot for the radio group.
+
+-   Radio Slots
+    -   **radio**: Radio root wrapper, it wraps all elements.
+    -   **point-wrapper**: Radio wrapper, it wraps the control element.
+    -   **point**: Control element, it is the circle element.
+    -   **label-wrapper**: Label and description wrapper.
+    -   **label**: Label slot for the radio.
+    -   **description**: Description slot for the radio.
+
+Each slot can be customized separately. The simple example below shows how to change the styles of some slots to create a radio-group with a different style.
+
+<CodeDemo code={radioGroupContent.cusTomstyles} showExpandCollapseBtn />
+
+> **Note**: You will find a Slots section in the documentation of each component that has slots.
+
+### Using CSS (Vanilla & TailwindCSS)
+
+Below is how you can override styles using either Vanilla CSS or TailwindCSS using PostCSS.
+
+> **Note**: Sometimes you might need to add `!important` at the end of the value of the property to override the styles.
+
+<CodeDemo
+	code={`<style>
+  button.button {
+    padding: 0.75em 1.75em;
+    border-radius: 999px;
+    background: hsla(var(--base-danger) / 0.8) !important;
+    color: white;
+  }
+</style>
+<button class="button">Button</button>`}
+/>
+
+If you're using TailwindCSS with PostCSS, here's how to do the same:
+
+> **Note**: Sometimes you might need to add `!` at the start of the class names to override the styles.
+
+```css
+button.button {
+	@apply rounded-sm bg-red-500 text-white;
+}
+```

@@ -1,0 +1,75 @@
+import { Step, Steps } from "@/components";
+
+## Vite
+
+<Steps>
+	<Step heading="Create a VITE project">
+		Start by creating a new project using `Vite`.
+		
+		```bash
+		npm create vite@latest luxeyui-project
+		cd luxeyui-project
+		```
+    </Step>
+    <Step heading="Install TailwindCSS and LuxeyUI">
+    	Install `tailwindcss` and its peer dependencies, then generate your
+    	`tailwind.config.js` and `postcss.config.js` file and configure them as
+    	needed along with the library itself:
+
+    	```bash
+    	npm i -D tailwindcss postcss autoprefixer luxeyui@latest
+    	npx tailwindcss init -p
+    	```
+    </Step>
+    <Step heading="Configure TailwindCSS & PostCSS">
+    	Add the following code to your `tailwind.config.js` file:
+
+    	```js
+    	/** @type {import('tailwindcss').Config} */
+    	module.exports = {
+    		darkMode: "class",
+    		content: [
+    			"./index.html",
+    			"./node_modules/luxeyui/dist/all.min.js"
+    		]
+    		// ...
+    	}
+    	```
+
+    	`postcss.config.js` file:
+
+    	```js
+    	module.exports {
+    		plugins: {
+    			tailwindcss: {},
+    			autoprefixer: {}
+    		}
+    	}
+    	```
+    </Step>
+    <Step heading="Link the CSS file">
+    	In your `index.html` file, copy & paste the following code in your
+    	`<head>` tag.
+
+    	```html
+    	<link rel="stylesheet" href="./node_modules/luxeyui/dist/all.min.css" />
+    	```
+
+    </Step>
+    <Step heading="Import the JavaScript file">
+    	In your `index.js` file, import the script form `node_modules/`.
+
+    	```js
+    	import "./node_modules/luxeyui/dist/index.js"
+    	```
+    </Step>
+    <Step heading="Now that's it">
+    	Now you can start your designing using components with full
+    	functionality.
+
+    	```html
+    	<button class="button primary">Button</button>
+    	```
+
+    </Step>
+</Steps>

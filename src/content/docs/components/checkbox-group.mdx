@@ -1,0 +1,43 @@
+import { checkboxGroupContent } from "@/content/components/checkbox-group";
+
+A Checkbox Group allows users to select one or more items from a list of choices.
+
+## Usage
+
+<CodeDemo code={checkboxGroupContent.usage} />
+
+### Disabled
+
+<CodeDemo code={checkboxGroupContent.disabled} />
+
+### Horizontal
+
+<CodeDemo code={checkboxGroupContent.horizontal} />
+
+### Invalid
+
+<CodeDemo code={checkboxGroupContent.invalid} />
+
+## Slots
+
+-   **checkbox-group**: Checkbox group root wrapper, it wraps the label and the wrapper.
+-   **checkbox-wrapper**: Checkbox group wrapper, it wraps all checkboxes.
+-   **group-label**: Checkbox group label, it is placed before the wrapper.
+-   **description**: The description of the checkbox group.
+-   **error-msg**: The error message of the checkbox group.
+
+### Custom Styles
+
+You can customize the `CheckboxGroup` component by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={checkboxGroupContent.customStyles} showExpandCollapseBtn />
+
+## Checkbox Group Properties
+
+| Property               | Type                       | Description                                                               | Default    |
+| ---------------------- | -------------------------- | ------------------------------------------------------------------------- | ---------- |
+| data-orientation       | `vertical` \| `horizontal` | The axis the checkbox group items should align with.                      | `vertical` |
+| data-disabled          | `"true"` \| `"false"`      | Whether the checkbox group is disabled.                                   | `false`    |
+| data-required          | `"true"` \| `"false"`      | Whether user checkboxes are required on the input before form submission. | `false`    |
+| data-invalid           | `"true"` \| `"false"`      | Whether the checkboxes are invalid.                                       | `false`    |
+| data-disable-animation | `"true"` \| `"false"`      | Whether the animation should be disabled.                                 | `false`    |

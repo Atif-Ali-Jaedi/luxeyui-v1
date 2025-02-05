@@ -1,0 +1,80 @@
+import { alertContent } from "@/content/components/alert";
+
+Alerts are temporary notifications that provide concise feedback about an action or event.
+
+## Usage
+
+<CodeDemo code={alertContent.usage} />
+
+### Colors
+
+<CodeDemo code={alertContent.colors} />
+
+### Variants
+
+<CodeDemo code={alertContent.variants} />
+
+### Radius
+
+<CodeDemo code={alertContent.radius} />
+
+### Custom Icon
+
+By default, `Alert` displays an appropriate icon based on the `color` classes. You can override this by providing a custom icon inside the `icon-wrapper` with the class `alert-icon`.
+
+<CodeDemo code={alertContent.customIcon} />
+
+### Without Icon
+
+You can hide the icon by using the `data-hide-icon` attribute.
+
+<CodeDemo code={alertContent.withOutIcon} />
+
+### Without Icon Wrapper
+
+You can hide the icon wrapper by using the `data-hide-icon-wrapper` attribute.
+
+<CodeDemo code={alertContent.withOutIconWrapper} />
+
+### With Action
+
+<CodeDemo code={alertContent.withAction} />
+
+### Controlled Visibility
+
+<CodeDemo code={alertContent.controlledVisibility} />
+
+## Slots
+
+Alert has the following slots:
+
+-   **alert**: The main alert container element.
+-   **title**: The title element.
+-   **description**: The description element.
+-   **main-wrapper**: The wrapper for the title and description content.
+-   **closebutton**: The close button element.
+-   **icon-wrapper**: The wrapper for the alert icon.
+-   **alert-icon**: The alert icon element.
+
+### Custom styles
+
+You can customize the `Alert` by passing custom Tailwind CSS classes to the component slots.
+
+<CodeDemo code={alertContent.customStyles} showExpandCollapseBtn />
+
+## Data Attributes
+
+`Alert` has the following attributes on the `base` element:
+
+-   **data-hide-icon**: Whether the icon is hidden.
+-   **data-hide-icon-wrapper**: Whether the icon wrapper is hidden.
+
+## Alert Properties
+
+| Property               | Type                                                                        | Description                         | Default   |
+| ---------------------- | --------------------------------------------------------------------------- | ----------------------------------- | --------- |
+| color                  | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | The alert color theme.              | `default` |
+| radius                 | `none` \| `sm` \| `md` \| `lg` \| `full`                                    | The alert border radius.            | `md`      |
+| variant                | `solid` \| `bordered` \| `flat` \| `faded`                                  | The alert variant.                  | `solid`   |
+| data-hide-icon         | `"true"` \| `"false"`                                                       | Whether the icon is hidden.         | `false`   |
+| data-hide-icon-wrapper | `"true"` \| `"false"`                                                       | Whether the icon wrapper is hidden. | `false`   |

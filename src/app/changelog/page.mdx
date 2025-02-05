@@ -1,0 +1,362 @@
+import { accordionContent } from "@/content/components/accordion";
+import { alertContent } from "@/content/components/alert";
+import { avatarContent } from "@/content/components/avatar";
+import { badgeContent } from "@/content/components/badge";
+import { buttonContent } from "@/content/components/button";
+import { cardContent } from "@/content/components/card";
+import { checkboxContent } from "@/content/components/checkbox";
+import { checkboxGroupContent } from "@/content/components/checkbox-group";
+import { chipContent } from "@/content/components/chip";
+import { circularProgressContent } from "@/content/components/circular-progress";
+import { codeContent } from "@/content/components/code";
+import { dividerContent } from "@/content/components/divider";
+import { drawerContent } from "@/content/components/drawer";
+import { imageContent } from "@/content/components/image";
+import { kbdContent } from "@/content/components/kbd";
+import { linkContent } from "@/content/components/link";
+import { modalContent } from "@/content/components/modal";
+import { progressContent } from "@/content/components/progress";
+import { radioGroupContent } from "@/content/components/radio-group";
+import { scrollShadowContent } from "@/content/components/scroll-shadow";
+import { skeletonContent } from "@/content/components/skeleton";
+import { spinnerContent } from "@/content/components/spinner";
+import { switchContent } from "@/content/components/switch";
+import { userContent } from "@/content/components/user";
+
+<div className="max-w-[780px] mx-auto mt-12 [&_time]:text-zinc-500 dark:[&_time]:text-zinc-400 prose-h2:mt-4 [&_ul>li>strong]:font-medium [&_ul>li>strong]:text-pink-500 dark:[&_ul>li>strong]:text-cyan-500 prose-hr:border-transparent prose-hr:my-8">
+
+    <h1 className="md:text-center !mb-4">Changelog</h1>
+    <p className="md:text-center">All the notable changes are listed here, ranging from super small updates to huge ones.</p>
+
+    ---
+
+    <Version>0.6.3</Version>
+    <time>14 December, 2024</time>
+
+    ## Added 3 new components and 2 bug fixed
+
+    ### New Components
+
+    #### Alert
+
+    A component for displaying temporary notifications that provide concise feedback about user actions or system events. Ideal for success, error, or informational messages.
+
+    <CodeDemo code={alertContent.usage}/>
+
+    #### Drawer
+
+    A sliding panel that emerges from the edge of the screen, allowing you to display additional content or options without leaving the current view.
+
+    <CodeDemo code={drawerContent.usage} initialHeight={680} isAdvanced/>
+
+    #### Modal
+
+    A dialog box that overlays the screen to capture user attention. It can contain custom content for providing more details or requiring user interaction.
+
+    <CodeDemo code={modalContent.usage} initialHeight={680} isAdvanced/>
+
+    ### Bug Fixes
+
+    - Fixed issue where **circular badges** were not respecting `size` classes, resulting in inconsistent sizing.
+    - Resolved problem with **badges using the `data-one-char` attribute**, where badges were being incorrectly sized.
+
+    ---
+
+    <Version>0.6.2</Version>
+    <time>19 October, 2024</time>
+
+    ## Small Bug fixes
+
+    This was a minor update, nothing much changed.
+
+    - Added support for disabling the `checkbox-group`, `radio-group` and `button-group` components.
+    -   Made the asterisk appear after the group-label in `checkbox-group` when using the `data-required` attribute.
+    -   Now the validity of the `checkbox-group` and `radio-group` is based on the `data-invalid` attribute of the group.
+    -   **Accordion**:
+        -   Now the indicator animation of the accordion item can be disabled by setting the `data-disable-indicator-animation` attribute.
+        -   Instead of changing the display property when using the `data-disable-animation` attribute, only disabling the transition effect.
+        -   Now the divider after each items can be disabled by setting the `data-show-divider` attribute.
+    -   Now you can customize the close icon of the chip.
+    -   Now the ripple effect of the card will only trigger when using the `data-pressable` attribute is `true` and `data-disable-ripple` attribute is not set to `true`. But when clicking any clickable elements in the card won't trigger the ripple effect.
+
+    ---
+
+    <Version>0.6.1</Version>
+    <time>5 October, 2024</time>
+
+    ## New theming and remaking of some components
+
+    -  **Progress**: Added support for dynamic value management with transition.
+    -  **Theme**:
+        - Added common colors from <Link isExternal color="primary" href="https://nextui.org/docs/customization/colors#common-colors">NextUI's Theme</Link>.
+        - Added common layout options from <Link isExternal color="primary" href="https://nextui.org/docs/customization/layout#default-layout">NextUI's Default Layout</Link>.
+    -  **Button**: Revised the entire component and made some changes, those are highlighted below:
+        - Fixed an issue where the button's min width was being overridden by `min-w-max` class.
+        - Fixed an issue where the `radius` classes did not work properly when using the `size` classes.
+        - Fixed an issue where the radius of the buttons inside the button group was a bit off.
+        - Added a feature where adjacent variant borders will be collapsed.
+        - Fixed an issue where the `data-full-width` did not work for the button group.
+        - Made sure that the variants has proper colors.
+    - Reduced file size using lightningcss and parcel as the bundler.
+    -  **Checkbox**: Remade the component and structure.
+    -  **Checkbox Group**: Adjusted styles according to the `Checkbox` configurations & styles.
+    -  **Radio**: Remade the component and structure.
+
+    ---
+
+    <Version>0.5.4 - 0.5.7</Version>
+    <time> 22 August, 2024 - 30 September, 2024</time>
+
+    More bug fixes and improvements
+
+    -   **Accordion**: Reworked on the variants.
+    -   **Avatar**: Completely reworked and now it has full functionality with all the necessary features.
+    -   Added the disability option to the `avatar-group` and fixed the sizes of the `avatar`.
+    -   Added `cursor-pointer` in the Switch component and the Link component.
+    -   **Switch**: Completely remade with every features possible.
+    -   **Button**:
+        -   Changed the duration of the transition from `300ms` to `200ms`.
+        -   Added a hover effect.
+    -   **Circular Progress**: Maked it so that the value can be changed dynamically.
+    -   **Progress**: Now the animation (when not indeterminate) can be turned off.
+    -   **Badge**: Now the badge can be used in the avatars or icons properly.
+    -   **Scroll Shadow**: Now offsets can be adjusted correctly and the shadow can be disabled or modified.
+
+    ---
+
+    <Version>0.5.0 - 0.5.3</Version>
+    <time>August 2, 2024 - August 21, 2024</time>
+
+    ## Added 3 new components and some features and couple of bug fixed
+
+    ### New components
+
+    #### Spinner
+
+    Spinner express an unspecified wait time or display the length of a process.
+
+    <CodeDemo code={spinnerContent.usage}/>
+
+    #### Circular Progress
+
+    Circular progress indicators are utilized to indicate an undetermined wait period or visually represent the duration of a process.
+
+    <CodeDemo code={circularProgressContent.usage}/>
+
+    #### Image
+
+    The Image component is used to display images with support for fallback.
+
+    <CodeDemo code={imageContent.usage}/>
+
+    ### Bug fix
+
+    -   **Skeleton**: It now has full functionality with the `data-load` attribute.
+    -   **Accordion**: Completely reworked and added features such as variants, disability, toggling, etc.
+    -   **Avatar**: Completely reworked and now it has full functionality with all the necessary features.
+    -   Removed a typo in `tailwind.config.js` where because of that the divider color does not work.
+    -   Changed the divider color, `bg-base-default` to `bg-layout-divider`.
+    -   Added `cursor-pointer` in the Switch component.
+
+    ---
+
+    <Version>0.4.x</Version>
+    <time >July 14, 2024 - July 26, 2024</time>
+
+    ## Added 4 new components with minor bug fixes
+
+    ### New Components
+
+    #### Progress
+
+    Visualize progress with ease.
+
+    <CodeDemo code={progressContent.usage}/>
+
+    #### Scroll Shadow
+
+    Add elegant shadows while scrolling.
+
+    <CodeDemo code={scrollShadowContent.usage}/>
+
+    #### KBD
+
+    Display keyboard keys stylishly.
+
+    <CodeDemo code={kbdContent.usage}/>
+
+    #### Checkbox Group
+
+    Manage groups of checkboxes efficiently.
+
+    <CodeDemo code={checkboxGroupContent.usage}/>
+
+    ### Bug Fixes
+
+    -   **Radio Group**: Improved readability by adjusting `radio-group-label` color from `text-foreground/70` to `text-default-700`.
+    -   **Progress**: Solved an specificity issue caused by the css `:not()` selector, <code className="code !whitespace-pre-wrap !inline">&:not(&[data-indeterminate]) > .track</code> to `& > .track`. Changed the stripped gradient opacity when using transparent background, from `rgba(0 0 0 / 0.1)` to `rgba(0 0 0 / 0.175)`.
+    -   **Button**:
+        -   Fixed the sizes.
+        -   Fixed an issue where the `radius-` classes does not work when `size-` classes are applied.
+        -   The ripple effect can be disabled using the `data-disable-ripple` attribute with the value `true`.
+        -   The default animation can be disabled using the `data-disable-animation` attribute.
+
+    ---
+
+    <Version>0.3.x</Version>
+    <time>June 30, 2024 - July 10, 2024</time>
+
+    ## Webiste Redesigned & fixed a lot of components and a lot more
+
+    -   **Dark Mode**: After a long time I finally added dark mode.
+    -   **Theming**: The ability to customize the original theme colors within your css by using css variables.
+    -   **Better Customization**: Now, it's a lot easier to customize the components.
+    -   **Input**: Added the most requested component "input".
+    -   **Components**: Fixed the badge and the button component. Also remade entirely the card and the textarea component and Adjusted all the components for dark mode.
+
+    There was a lot of bugs in the input component, so I had to fix those.
+
+    -   Adjusted the border width, `2.5px → 2px`
+    -   Adjusted the radius for `sizes` & `radiuses`
+    -   Added the `helper-wrapper`
+    -   Added the `description` & `error-msg` for `helper-wrapper`
+    -   Added validation for the input to display error only when needed.
+    -   Fixed and issue higher the colours of the borders doesn't appear on focus because of the specificity issue.
+    -   Added transparent background instead of just solid background, `bg-layout-bg → bg-transparent`.
+    -   Added a gap between the content before / after the `input`, inside `inner-wrapper`, `gap-px → gap-1.5`.
+
+    ---
+
+    <Version>0.2.x</Version>
+    <time>February 21, 2024</time>
+
+    ## Improved collections & fixed components & website
+
+    It was a huge update. Although I've added only 5 components, and fixed 2 components, I've also created this website for showcase.
+
+    ### Added
+
+    #### Accordion
+
+    A type of menu that displays a list of headers stacked on top of one another. When clicked on, these headers will either reveal or hide associated content.
+
+    <CodeDemo code={accordionContent.usage}/>
+
+    #### Card
+
+    A container for text, photos and actions in the context of a single subject.
+
+    <CodeDemo code={cardContent.usage}/>
+
+    #### Checkbox
+
+    Checkboxes are controls that allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+    <CodeDemo code={checkboxContent.usage}/>
+
+    #### Skeleton
+
+    Skeleton is a placeholder to show a loading state and the expected shape of a component.
+
+    <CodeDemo code={skeletonContent.usage}/>
+
+    #### Textarea
+
+    A multi-line input for writing text.
+
+    ### Fixed
+
+    -   **Avatar**: Fixed some issues.
+    -   **Chip**: Fixed the sizing issue due to the wrong calculation of the width of the chip.
+
+    ---
+
+    <Version>0.1.0</Version>
+    <time>January 5, 2024</time>
+
+    ## Improved collections & more
+
+    This was a medium update, neither too big nor too small. There was some issues with some components but will be fixed later. Here's what I've added:
+
+    ### Badge
+
+    Badge is used as a status descriptor for especially avatars or icons.
+
+    <CodeDemo code={badgeContent.usage}/>
+
+    ### Button
+
+    Button allows users to perform actions and choose with a single tap or more.
+
+    <CodeDemo code={buttonContent.usage}/>
+
+    ### Chip
+
+    A small block to display important informations.
+
+    <CodeDemo code={chipContent.usage}/>
+
+    ### Code
+
+    A component which is used for displaying an inline code.
+
+    <CodeDemo code={codeContent.usage}/>
+
+    ### Divider
+
+    A separator for contents.
+
+    <CodeDemo code={dividerContent.usage}/>
+
+    ### Link
+
+    Link component is styled to resemble a hyperlink for navigating between pages.
+
+    <CodeDemo code={linkContent.usage}/>
+
+    ### Radio Group
+
+    Radio buttons—where only one of the buttons can be checked or selected.
+
+    <CodeDemo code={radioGroupContent.usage}/>
+
+    ### Switch
+
+    Switch is used to toggle between checked and not checked.
+
+    <CodeDemo code={switchContent.usage}/>
+
+    ### User
+
+    Display user information with avatar and name and description.
+
+    <CodeDemo code={userContent.usage}/>
+
+    ---
+
+    <Version>0.0.1</Version>
+    <time>December 29, 2023</time>
+
+    ## First testing
+
+    There wasn't much, It was just a simple test. I had added:
+
+    ### Theme
+
+    A theme is web design manages the front-end design, establishing the overall appearance and functionality by managing its front-end design. Themes determine all design components: page layouts, backgrounds, color palettes, headers and footers, positioning, sizing, and typography.
+
+    ### Avatar
+
+    The Avatar is used to represent a user's profile picture, initial or fallback icon.
+
+    <CodeDemo code={avatarContent.usage}/>
+
+    ---
+
+    ### Thank you
+
+    I'd like to thank everyone who has been using this project, providing feedback and contributing to it. I really appreciate it. Thank you 🙏
+
+    ---
+
+</div>

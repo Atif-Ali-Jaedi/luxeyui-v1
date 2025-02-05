@@ -1,0 +1,55 @@
+import { Step, Steps } from "@/components";
+
+Enabling Dark Mode in your projects is straightforward:
+
+<Steps>
+  <Step heading="Update the Library">
+    Ensure you're using the latest version of LuxeyUI.
+    Use this if you're using CDN:
+    ```html
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@0.6.3/dist/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/luxeyui@0.6.3/dist/index.js" defer></script>
+    ```
+    Use this if you're installing via npm:
+
+    ```bash
+    npm i luxeyui@latest
+    ```
+
+  </Step>
+  <Step heading="Enable Dark Mode">
+    To enable dark mode, add one of these snippets to your `tailwind.config.js` file:
+
+    ```js
+    tailwind.config = { darkMode: "class" } // For CDN
+    ```
+    <br/>
+    ```js
+    module.exports = {
+      darkMode: "class",
+      // ...
+    }
+    ```
+
+  </Step>
+  <Step heading="Customize as Needed">
+    Modify your CSS file to tweak dark mode to suit your design needs. Use `hsla` format without the parenthesis and `hsla` to customize colors:
+    ```css
+    :root.dark {
+      --base-primary: 188.6 100% 46.7%;
+      --content-4: 0 0% 99.6%;
+    }
+    ```
+  </Step>
+  <Step heading="Add the Toggle Functionality">
+    Add functionality for toggling dark mode. For example:
+    ```html
+    <input type="checkbox" id="toggler" class="switch" />
+    <script>
+      document.querySelector("#toggler").addEventListener("click", e => {
+        document.documentElement.className = e.target.checked ? "dark" : "";
+      });
+    </script>
+    ```
+  </Step>
+</Steps>

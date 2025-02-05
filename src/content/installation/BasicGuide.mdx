@@ -1,0 +1,68 @@
+import { HighlightedSnippet, Step, Steps } from "@/components";
+import { currentVersion } from "@/data/constants";
+
+## HTML
+
+<Steps>
+    <Step heading="Create a boilerplate">
+
+        Start by creating a basic `HTML`
+        template.
+
+
+        ```html
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>LuxeyUI Project</title>
+            </head>
+            <body></body>
+        </html>
+        ```
+    </Step>
+    <Step heading="Add the CDNs">
+
+        Add the necessary CDNs in your project. I&apos;d
+        recommend to use TailwindCSS to make your life a lot
+        easier.
+
+        <HighlightedSnippet
+            code={`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luxeyui@${currentVersion}/dist/all.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxeyui@${currentVersion}/dist/all.min.js" defer></script>`}
+
+        />
+    </Step>
+    <Step heading="Configure TailwindCSS">
+
+        Create a `tailwind.config.js` file and
+        copy & paste this code in that file.
+
+        ```js
+        tailwind.config = {
+            darkMode: "class",
+            // ...
+        }
+        ```
+
+        Now, you must link this script in your
+        `index.html`
+        file.
+
+        ```html
+        <script src="./tailwind.config.js"></script>
+        ```
+    </Step>
+    <Step heading="That's it">
+
+        Now you can start your designing using components
+        with full functionality.
+
+        ```html
+        <button class="button primary">Button</button>
+        ```
+    </Step>
+</Steps>
