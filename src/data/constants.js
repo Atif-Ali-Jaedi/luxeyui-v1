@@ -1,4 +1,4 @@
-const currentVersion = "0.6.3";
+const currentVersion = "0.6.4";
 const navLinks = [
 	{
 		href: "/docs/introduction",
@@ -94,10 +94,9 @@ const components = [
 		return acc;
 	}, {});
 
-components.alert.new = true;
-components.drawer.new = true;
-components.modal.new = true;
-components.badge.updated = true;
+components.alert.updated = true;
+components.drawer.updated = true;
+components.modal.updated = true;
 
 components.input.comingSoon = true;
 components.textarea.comingSoon = true;
@@ -113,5 +112,6 @@ export {
 	currentVersion,
 	defaultSidebarLinks,
 	navLinks,
-	sidebarLinks,
+	sidebarLinks
 };
+

@@ -30,7 +30,7 @@ export const HeroIllustration = () => {
 				</TextRevealCard>
 			</div>
 			<div className="col-span-2 sm:col-span-1">
-				<div className="group relative h-full overflow-hidden rounded-2xl border border-zinc-100 bg-white transition duration-200 hover:shadow-xl dark:border-zinc-800 dark:bg-dark">
+				<div className="group relative h-full overflow-hidden rounded-2xl border border-zinc-100 bg-white transition-shadow duration-200 hover:shadow-xl dark:border-zinc-800 dark:bg-dark">
 					<div className="relative w-full overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900">
 						<Image
 							src={"/introduction.png"}

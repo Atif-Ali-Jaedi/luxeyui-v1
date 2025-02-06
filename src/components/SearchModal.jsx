@@ -60,7 +60,7 @@ export const SearchModal = () => {
 							isIconOnly
 							onClick={() => setValue("")}
 							className={twMerge(
-								`pointer-events-none border border-zinc-400 text-obsidian opacity-0 hover:bg-zinc-50 dark:border-zinc-800 dark:text-smoke dark:hover:bg-zinc-900 ${value !== "" ? "pointer-events-auto opacity-100" : ""}`,
+								`pointer-events-none border border-zinc-400 text-obsidian opacity-0 hover:bg-zinc-50 dark:border-zinc-800 dark:text-smoke dark:hover:bg-zinc-900 focus-visible:outline focus-visible:outline-primary-500 focus-visible:outline-2 ${value !== "" ? "pointer-events-auto opacity-100" : ""}`,
 							)}
 							variant="light"
 							size="sm"

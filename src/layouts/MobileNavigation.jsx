@@ -91,7 +91,7 @@ export const MobileNavigation = () => {
 				/>
 			</div>
 			<div
-				className={`fixed top-16 z-40 w-full overflow-y-auto bg-light/70 px-6 backdrop-blur-xl backdrop-saturate-150 transition-[height] duration-[1s] ease-in-out dark:bg-dark/70 lg:pointer-events-none lg:opacity-0 ${open ? "h-[calc(100dvh-64px)]" : "h-0"}`}
+				className={`fixed top-16 z-40 w-full overflow-y-auto bg-white/70 px-6 backdrop-blur-xl backdrop-saturate-150 transition-[height] duration-[1s] ease-in-out dark:bg-dark/70 lg:pointer-events-none lg:opacity-0 ${open ? "h-[calc(100dvh-64px)]" : "h-0"}`}
 			>
 				<ul className="not-prose flex flex-col gap-3 py-2">
 					{navLinks.map((element, i) => (
